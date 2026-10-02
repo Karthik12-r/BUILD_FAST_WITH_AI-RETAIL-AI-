@@ -7,6 +7,7 @@ import com.retailops.retailops_ai.repository.ManagerApprovalRepository;
 import com.retailops.retailops_ai.repository.SalesDataRepository;
 import com.retailops.retailops_ai.repository.SupplierRepository;
 import com.retailops.retailops_ai.service.ApprovalService;
+import com.retailops.retailops_ai.service.BranchAnalyticsService;
 import com.retailops.retailops_ai.service.DashboardAnalyticsService;
 import com.retailops.retailops_ai.service.RecommendationApprovalService;
 import com.retailops.retailops_ai.service.RecommendationService;
@@ -15,9 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.server.ResponseStatusException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -47,6 +46,9 @@ class RetailopsAiApplicationTests {
 
 	@Autowired
 	private RetailAssistantService assistantService;
+
+	@Autowired
+	private BranchAnalyticsService branchAnalyticsService;
 
 	@Test
 	void contextLoads() {
@@ -86,10 +88,28 @@ class RetailopsAiApplicationTests {
 	}
 
 	@Test
-	void assistantExplainsThatProviderMustBeConfigured() {
-		assertThatThrownBy(() -> assistantService.ask(new AssistantQuestion("Which products need reordering?")))
-				.isInstanceOfSatisfying(ResponseStatusException.class, exception ->
-						assertThat(exception.getStatusCode()).isEqualTo(HttpStatus.SERVICE_UNAVAILABLE));
+	void branchAnalyticsUseMappedStoreSalesAndOperationalData() {
+		var branches = branchAnalyticsService.getBranches();
+		var bengaluru = branches.stream().filter(branch -> branch.id().equals("BR01")).findFirst().orElseThrow();
+		var overview = branchAnalyticsService.getOverview("BR01", "7D");
+
+		assertThat(branches).hasSize(4);
+		assertThat(bengaluru.name()).isEqualTo("Bengaluru Central");
+		assertThat(bengaluru.storeIds()).containsExactly("S001", "S002");
+		assertThat(bengaluru.latestDayRevenue()).isPositive();
+		assertThat(overview.branch().dataAsOf()).isNotNull();
+		assertThat(overview.salesTrend()).hasSize(7);
+		assertThat(overview.topProducts()).isNotEmpty();
+		assertThat(overview.insight()).contains("Revenue is");
+	}
+
+	@Test
+	void assistantUsesCurrentRetailDataWhenProviderIsNotConfigured() {
+		var answer = assistantService.ask(new AssistantQuestion("Give me a retail operations summary."));
+
+		assertThat(answer.answer()).contains("Current RetailOps snapshot");
+		assertThat(answer.answer()).contains("pending manager approvals");
+		assertThat(answer.answer()).contains("Based on connected RetailOps data");
 	}
 
 	@Test
