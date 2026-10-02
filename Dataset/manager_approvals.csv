@@ -1,0 +1,16 @@
+Approval_ID,Action_ID,Date,Store_ID,Product_ID,Action_Type,Recommended_Qty,Reason,Status,Approved_By,Approval_Timestamp,Manager_Comment
+APR0001,ACT0001,2024-01-30,S002,P0018,REORDER,535,Low inventory relative to demand,PENDING,,,
+APR0002,ACT0002,2024-01-30,S001,P0013,REORDER,373,Low inventory relative to demand,PENDING,,,
+APR0003,ACT0003,2024-01-30,S003,P0009,REORDER,632,Low inventory relative to demand,APPROVED,Manager01,2026-09-29 10:30:00,Approved for replenishment
+APR0004,ACT0004,2024-01-30,S003,P0019,REORDER,552,Low inventory relative to demand,REJECTED,,,Rejected by manager
+APR0005,ACT0005,2024-01-30,S002,P0006,REORDER,138,Low inventory relative to demand,PENDING,,,
+APR0006,ACT0006,2024-01-30,S002,P0016,REORDER,122,Low inventory relative to demand,PENDING,,,
+APR0007,ACT0007,2024-01-30,S003,P0010,REORDER,681,Low inventory relative to demand,APPROVED,Manager01,2026-09-29 10:30:00,Approved for replenishment
+APR0008,ACT0008,2024-01-30,S004,P0020,REORDER,479,Low inventory relative to demand,REJECTED,,,Rejected by manager
+APR0009,ACT0009,2024-01-30,S002,P0008,REORDER,299,Low inventory relative to demand,PENDING,,,
+APR0010,ACT0010,2024-01-30,S003,P0003,REORDER,317,Low inventory relative to demand,PENDING,,,
+APR0011,ACT0011,2024-01-30,S001,P0015,REORDER,418,Low inventory relative to demand,APPROVED,Manager01,2026-09-29 10:30:00,Approved for replenishment
+APR0012,ACT0012,2024-01-30,S002,P0013,REORDER,391,Low inventory relative to demand,REJECTED,,,Rejected by manager
+APR0013,ACT0013,2024-01-30,S005,P0017,REORDER,274,Low inventory relative to demand,PENDING,,,
+APR0014,ACT0014,2024-01-30,S003,P0006,REORDER,138,Low inventory relative to demand,PENDING,,,
+APR0015,ACT0015,2024-01-30,S003,P0011,REORDER,125,Low inventory relative to demand,APPROVED,Manager01,2026-09-29 10:30:00,Approved for replenishment
