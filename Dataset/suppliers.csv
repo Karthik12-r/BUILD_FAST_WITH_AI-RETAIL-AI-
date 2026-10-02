@@ -1,0 +1,21 @@
+Supplier_ID,Supplier_Name,Product_ID,Email,Lead_Time_Days,Minimum_Order_Qty,Unit_Cost,Contact_Phone
+SUP001,NorthStar Distributors,P0001,supplier01@retailops-demo.com,2,20,9.42,+91-90000-10000
+SUP002,Prime Retail Supply,P0002,supplier02@retailops-demo.com,3,25,23.34,+91-90000-10001
+SUP003,Metro Wholesale,P0003,supplier03@retailops-demo.com,4,30,45.11,+91-90000-10002
+SUP004,Apex Distribution,P0004,supplier04@retailops-demo.com,5,40,24.36,+91-90000-10003
+SUP005,Reliable Traders,P0005,supplier05@retailops-demo.com,6,50,34.27,+91-90000-10004
+SUP006,Urban Supply Co.,P0006,supplier06@retailops-demo.com,2,20,25.52,+91-90000-10005
+SUP007,SmartMart Suppliers,P0007,supplier07@retailops-demo.com,3,25,15.78,+91-90000-10006
+SUP008,Galaxy Wholesale,P0008,supplier08@retailops-demo.com,4,30,37.49,+91-90000-10007
+SUP009,Evergreen Distributors,P0009,supplier09@retailops-demo.com,5,40,50.16,+91-90000-10008
+SUP010,ValueLine Supply,P0010,supplier10@retailops-demo.com,6,50,35.04,+91-90000-10009
+SUP011,NorthStar Distributors,P0011,supplier11@retailops-demo.com,2,20,56.16,+91-90000-10010
+SUP012,Prime Retail Supply,P0012,supplier12@retailops-demo.com,3,25,55.33,+91-90000-10011
+SUP013,Metro Wholesale,P0013,supplier13@retailops-demo.com,4,30,18.45,+91-90000-10012
+SUP014,Apex Distribution,P0014,supplier14@retailops-demo.com,5,40,69.22,+91-90000-10013
+SUP015,Reliable Traders,P0015,supplier15@retailops-demo.com,6,50,39.57,+91-90000-10014
+SUP016,Urban Supply Co.,P0016,supplier16@retailops-demo.com,2,20,48.67,+91-90000-10015
+SUP017,SmartMart Suppliers,P0017,supplier17@retailops-demo.com,3,25,20.92,+91-90000-10016
+SUP018,Galaxy Wholesale,P0018,supplier18@retailops-demo.com,4,30,35.88,+91-90000-10017
+SUP019,Evergreen Distributors,P0019,supplier19@retailops-demo.com,5,40,49.99,+91-90000-10018
+SUP020,ValueLine Supply,P0020,supplier20@retailops-demo.com,6,50,61.57,+91-90000-10019
